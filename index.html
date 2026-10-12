@@ -13,7 +13,7 @@ button{margin-top:18px;background:#D7F94B;color:#0E0F12;border:0;border-radius:9
 <script>
 var APP="https://script.google.com/macros/s/AKfycbyx7E2uZm9AkcwgLGrPQngLLKjTRYwMaYkHEYK4C6ro8ERFHoOA-qWwxEmkesjFQORW/exec?m=1";
 if(navigator.standalone) location.replace(APP);
-try{ if(localStorage.getItem("ft_installed")==="1") location.replace(APP); }catch(e){}
+try{ if(location.search.indexOf("setup")>-1) localStorage.removeItem("ft_installed"); else if(localStorage.getItem("ft_installed")==="1") location.replace(APP); }catch(e){}
 function done(){ try{localStorage.setItem("ft_installed","1");}catch(e){} location.replace(APP); }
 </script></head><body>
 <img src="apple-touch-icon.png" alt="">
